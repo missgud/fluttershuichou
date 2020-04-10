@@ -1,3 +1,4 @@
+import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:shui_chou/utils/myUtil.dart';
@@ -271,6 +272,22 @@ class DetailsBody extends StatelessWidget {
                     ),
                 itemCount: 4),
           ),
+          SizedBox(
+            height: getAdapterDp(20),
+          ),
+          Container(
+            width: ScreenUtil.getScreenW(context),
+            height: getAdapterDp(90),
+            child: ListView.separated(
+                physics: NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => LoadImgUtil.loadAssetImg(
+                    "img_details1.png", getAdapterDp(120)),
+                separatorBuilder: (context, index) => SizedBox(
+                      width: getAdapterDp(8),
+                    ),
+                itemCount: 3),
+          )
         ],
       ),
     );
